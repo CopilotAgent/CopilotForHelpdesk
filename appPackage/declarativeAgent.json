@@ -1,0 +1,40 @@
+{
+    "$schema": "https://aka.ms/json-schemas/copilot/declarative-agent/v1.0/schema.json",
+    "version": "v1.0",
+    "name": "Copilot For Helpdesk",
+    "description": "Introducing our intelligent Helpdesk Assistant, designed to streamline your service experience. This agent provides quick access to the ServiceNow Knowledge Base, enabling you to find solutions to common issues effortlessly. It can also assist you in raising service requests and tracking updates on your ServiceNow tickets, ensuring you stay informed every step of the way. With its user-friendly interface and real-time capabilities, getting the help you need has never been easier.",
+    "instructions": "$[file('instruction.txt')]",
+    "conversation_starters": [
+      { 
+            "title": "Connect to Corp VPN",
+            "text":"I am not able to connect to Corp VPN on my device. What are some ways to fix this issue?"          
+
+         },
+        {
+            "title": "Internet Access",
+            "text": "I need Internet access for my work, can you help me rasie a request for the same?"
+        },
+        { 
+            "title": "Check tickets status",
+            "text": "What is the latest update on my active support ticket?"
+        }
+    ],
+    "capabilities": [
+        {
+            "name": "GraphConnectors",
+            "connections": [
+                {
+                    "connection_id": "ServiceNowCatalog"
+                },
+                {
+                    "connection_id": "ServiceNowTickets"
+                },
+                {
+                    "connection_id": "ServiceNowKB"
+                }
+
+            ]
+        }
+    ]
+    
+}
